@@ -11,6 +11,7 @@ def success(score):
 def fail(score):
     return "Failed with score :: "+str(score);
 
+''' Building URL dynamically '''
 @app.route('/result/<int:marks>')
 def result(marks):
     status = ''
