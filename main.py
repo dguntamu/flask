@@ -13,12 +13,25 @@ def welcome():
 
 @app.route('/success/<int:score>')
 def success(score):
-    final_result = ''
+    # final_result = ''
+    # if score >= 50:
+    #     final_result = 'PASS'
+    # else:
+    #     final_result = "FAIL"
+    # return render_template('result.html',res = final_result);
+
+    #dictionry example
+
+    res = ''
     if score >= 50:
-        final_result = 'PASS'
+        res = 'PASSED'
     else:
-        final_result = "FAIL"
-    return render_template('result.html',res = final_result);
+        res = 'FAILED'
+
+    exp = {'score':score,'str_res':res,'test':123,'test2':345} #dictionary declaration
+
+
+    return render_template('result.html',res = exp);
 
 @app.route('/fail/<int:score>')
 def fail(score):

@@ -1,6 +1,28 @@
 <html>
     <h1>Final Result</h1>
     <body>
-        The avarage resul : {{ res }}
+        {# The avarage result : {{ res }} #}
+       
+       
+       {#  {% if res >= 50 %}
+        <h1>PASSED</h1>
+        {% else %}
+        <h2>FAILED</h2>
+        {% endif %}
+        #}
+
+        
+        <table border=1>
+            {% for key, value in res.items() %}
+            <tr>
+                <th>{{ key }}</th>
+                <th>{{ value }}</th>
+            </tr>
+            {% endfor %}
+        </table>
+
+        
+
+
     </body>
 </html>
